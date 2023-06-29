@@ -1,8 +1,7 @@
-const express = require('express');
-const app = express();
+const http = require('http'); // יצירת סרבר חדש של נוד
+const app = require('./app');
+const port = 5000;
 
-app.get("/api", (req, res) => {
-    res.json({ "users": ["userOne", "userTwo", "userThree", "userFour", "userFive", "userSix"] })
-})
+const server = http.createServer(app);
 
-app.listen(5000, () => { console.log("server at 5000") })
+server.listen(port);
