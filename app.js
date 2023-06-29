@@ -1,5 +1,9 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
+
+//loger
+app.use(morgan("dev"));
 
 //prevent cors
 app.use((req, res, next) => {
