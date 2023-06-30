@@ -14,14 +14,6 @@ console.log(json);
 //loger
 app.use(morgan("dev"));
 
-//get json to body
-app.use(express.json());
-
-//orgenized json
-app.use(express.urlencoded({
-    extended: false,
-}));
-
 //prevent cors
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
