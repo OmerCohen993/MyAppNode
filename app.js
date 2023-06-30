@@ -1,15 +1,6 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const mongoose = require('mongoose');
-
-const imagesRoutes = require('./api/routes/imagesRoutes');
-
-const category = "sport";
-const api_url = `https://pixabay.com/a pi/?key=25540812-faf2b76d586c1787d2dd02736&q=${category}`;
-const respons = fetch(api_url);
-const json = respons.json();
-console.log(json);
 
 //loger
 app.use(morgan("dev"));
@@ -24,9 +15,6 @@ app.use((req, res, next) => {
     }
     next();
 });
-
-//Route to /images
-app.use('/images', imagesRoutes);
 
 //exeption in case not root found
 app.use((req, res, next) => {
